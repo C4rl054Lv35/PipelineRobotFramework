@@ -25,8 +25,8 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: pip install robotframework
-      - name: Requests
-        run: pip install robotframework-requests
+      #- name: Requests
+      #  run: pip install robotframework-requests
 
 	#aqui vai executar o robot=================================================================================
       - name: executa

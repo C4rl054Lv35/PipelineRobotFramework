@@ -1,5 +1,4 @@
 name: CI
-
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
@@ -9,7 +8,7 @@ on:
     branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+  #workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -26,8 +25,8 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: pip install robotframework
-      - #name: Requests
-        #run: pip install robotframework-requests
+      - name: Requests
+        run: pip install robotframework-requests
 
 	#aqui vai executar o robot=================================================================================
       - name: executa

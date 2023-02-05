@@ -30,7 +30,7 @@ jobs:
 
 	#aqui vai executar o robot=================================================================================
       - name: executa
-        run: robot .\amazon_testes.robo
+        run: robot .\amazon_testes.robot
       - name: Make Directory for results
         run: mkdir -p reports
       - name: Upload test results

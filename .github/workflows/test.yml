@@ -1,21 +1,16 @@
 name: CI
 
-# Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
+  schedule:
+    - cron: '0 8,9,10,11,12,13 * * *'
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  e2e-testes:
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -31,7 +26,7 @@ jobs:
 
 	#aqui vai executar o robot=================================================================================
       - name: executa
-        run: robot -d ./reports main.robot
+        run: robot -d ./reports amazon_tests.robot
       - name: Make Directory for results
         run: mkdir -p reports
       - name: Upload test results
